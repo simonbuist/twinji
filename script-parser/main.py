@@ -1,4 +1,3 @@
-import requests
 import os
 
 def main():
@@ -12,17 +11,8 @@ def main():
         script_text = "~twinji~".join(script_lines)
         script_text = script_text.replace("Shinji :", "Shinji:")
 
-
-
-    print(script_text)
-
-    lim = 200
-
     with open(os.path.dirname(os.path.abspath(__file__)) + "/lines.txt", "w") as lines_file:
 
-        
-
-        
         while script_text != "":
             index = script_text.find("Shinji:")
 
@@ -30,11 +20,7 @@ def main():
             if index == -1:
                 break
 
-            
             script_text = script_text[index:]
-            # index = script_text.find("~twinji~\n~twinji~")
-
-            # index2 = script_text[script_text.find(":")+1:].find(":")
 
             index = round(1/max(1/script_text.find("~twinji~\n~twinji~"), 1/script_text[script_text.find(":")+1:].find(":")))
 
@@ -53,10 +39,6 @@ def main():
             script_text = script_text[index:]
             if len(line) > 10:
                 lines_file.write(line)
-
-            #lim -= 1
-            if lim == 0:
-                break
 
     print("done")
 
