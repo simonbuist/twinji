@@ -1,7 +1,7 @@
 from requests_oauthlib import OAuth1Session
 import json
 import line_generator
-import keep_alive
+from keep_alive import keep_alive
 
 
 
