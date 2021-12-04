@@ -13,7 +13,7 @@ access_token_secret = keys[3]
 
 
 # Generate Shinji tweet
-text = line_generator.main()
+text = line_generator.gen_line()
 payload = {"text": text}
 
 # Make the request

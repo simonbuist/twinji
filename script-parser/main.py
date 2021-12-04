@@ -9,12 +9,12 @@ def main():
     script_text = ""
 
     # open the script file
-    with open(getFolder("script.txt"), "r") as script_file:
+    with open(getFolder("script.txt"), "r", encoding='utf-8') as script_file:
         script_lines = script_file.readlines()
         script_text = "~twinji~".join(script_lines)
         script_text = script_text.replace("Shinji :", "Shinji:")
 
-    with open(getFolder("script.txt"), "w") as lines_file:
+    with open(getFolder("lines.txt"), "w", encoding='utf-8') as lines_file:
 
         while script_text != "":
             index = script_text.find("Shinji:")
