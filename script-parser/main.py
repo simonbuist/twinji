@@ -1,17 +1,20 @@
-import os
+from os import path
+
+def getFolder(file):
+    return path.join(path.dirname(path.abspath(__file__)), file)
 
 def main():
     print("Running")
-    print(os.path.dirname(os.path.abspath(__file__)) + "/script.txt")
+    print(getFolder("script.txt"))
     script_text = ""
 
     # open the script file
-    with open(os.path.dirname(os.path.abspath(__file__)) + "/script.txt", "r") as script_file:
+    with open(getFolder("script.txt"), "r") as script_file:
         script_lines = script_file.readlines()
         script_text = "~twinji~".join(script_lines)
         script_text = script_text.replace("Shinji :", "Shinji:")
 
-    with open(os.path.dirname(os.path.abspath(__file__)) + "/lines.txt", "w") as lines_file:
+    with open(getFolder("script.txt"), "w") as lines_file:
 
         while script_text != "":
             index = script_text.find("Shinji:")
